@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <iostream>
 #include <map>
+#include <sstream>
 
 /*
 Problem:
@@ -29,13 +30,12 @@ Output
 The output consists of lines in alphabetical order. Each line starts with the name of a country, followed by the total number of women Giovanni loved in that country, separated by a space.
 
 Sample Input
-
 3
 Spain Donna Elvira
 England Jane Doe
 Spain Donna Anna
-Sample Output
 
+Sample Output
 England 1
 Spain 2
 */
@@ -47,28 +47,32 @@ int main() {
 
     int n, i;
 
-    string line;
+    string line, country;
 
     scanf("%d\n", &n);
 
     map<string, int> beauties;
+    map<string, int>::iterator iter;
 
     for (int i = 0; i < n; ++i) {
         getline(cin, line);
 
-        cout << line << endl;
-        // if (beauties.find(country) == beauties.end()) {
-        //     beauties[country] = 1;
-        // } else {
-        //     beauties[country] = beauties[country] + 1;
-        // }
+        istringstream iss(line);
+
+        iss >> country;
+
+        if (beauties.find(country) == beauties.end()) {
+            beauties[country] = 1;
+        } else {
+            beauties[country] = beauties[country] + 1;
+        }
     }
 
-    // map<string, int>::iterator iter;
 
-    // for (iter = beauties.begin(); iter != beauties.end(); ++iter) {
-    //    cout << iter->first << " : " << iter->second;
-    // }
+
+    for (iter = beauties.begin(); iter != beauties.end(); iter++) {
+       cout << iter->first << " " << iter->second << endl;
+    }
 
     return 0;
 };
