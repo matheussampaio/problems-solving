@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <iostream>
-#include <map>
+#include <cmath>
 #include <sstream>
 
 /*
@@ -53,19 +53,22 @@ using namespace std;
 
 int main() {
 
-    int hour, minute;
-    string s;
-    string line;
+    float hour, minute;
 
-    while ( getline(cin, line) ) {
-        if (line.compare("0:00") == 0) {
+    while ( true ) {
+    	scanf("%f%*[:]%f", &hour, &minute);
+    	
+        if (hour == 0 && minute == 0) {
             break;
         }
-
-        istringstream ( line.substr(0, line.find(":")) ) >> hour;
-        istringstream ( line.substr(line.find(":"), line.size()) ) >> minute;
-
-        cout << hour << ":" << minute << endl;
+		
+		float result = abs( ( (hour * 30) + (minute / 2) ) - (minute * 6) );
+		
+		if (result >= 180)
+			result = 360 - result;
+		
+		printf("%.3f\n", result);
+		
     }
 
     return 0;
