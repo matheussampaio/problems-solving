@@ -62,12 +62,12 @@ int main() {
             break;
         }
 		
-		float result = abs( ( (hour * 30) + (minute / 2) ) - (minute * 6) );
+        float result = abs( ( (hour * 30) + (minute / 2) ) - (minute * 6) );
 		
-		if (result >= 180)
-			result = 360 - result;
+        if (result >= 180)
+            result = 360 - result;
 		
-		printf("%.3f\n", result);
+        printf("%.3f\n", result);
 		
     }
 
