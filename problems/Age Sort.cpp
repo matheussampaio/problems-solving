@@ -53,7 +53,7 @@ int main() {
     while (true) {
         scanf("%d", &N);
 
-        if (!N)
+        if (N == 0)
             break;
 
         for (i = 0; i < N; i++) {
@@ -62,8 +62,13 @@ int main() {
         }
 
         for (iter = ages.begin(); iter != ages.end(); ++iter) {
-            for (i = 0; i < iter->second; i++)
-                printf("%d ", iter->first);
+            for (i = 0; i < iter->second; i++) {
+                if (distance(iter, ages.end()) == 1 && i + 1 == iter->second) {
+                    printf("%d", iter->first);
+                } else {
+                    printf("%d ", iter->first);
+                }
+            }
         }
 
         printf("\n");
