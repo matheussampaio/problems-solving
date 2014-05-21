@@ -1,4 +1,3 @@
-
 #include <cstdio>
 #include <iostream>
 #include <stack>
@@ -48,39 +47,63 @@ Yes
 
 using namespace std;
 
-int N, count, i;
-bool first = true;
+int N, i, coach, k;
+bool cont;
 
-string line;
-// stack< char > pilha;
+stack< int > station;
 
 int main() {
 
-    freopen("input.txt", "r", stdin);
+    // freopen("input.txt", "r", stdin);
 
     while (true) {
 
         scanf("%d\n", &N);
 
-        if (!N)
+        if (!N) {
             break;
-
-        if (first) {
-            first = false;
-        } else {
-            printf("\n");
         }
 
         while (true) {
-            getline(cin, line);
 
-            if (!line.compare("0"))
+            while (!station.empty()) {
+                station.pop();
+            }
+
+            for (k = i = 0; i < N; i++) {
+
+                scanf("%d ", &coach);
+
+                if (!coach) {
+                    break;
+                }
+
+                while (k < N && k != coach) {
+                    if (station.size() > 0 && station.top() == coach) {
+                        break;
+                    }
+
+                    station.push(++k);
+                }
+
+                if (station.top() == coach) {
+                    station.pop();
+                }
+
+            }
+
+            if (!coach) {
                 break;
+            }
 
-            // TODO
-
-            printf("Yes\n");
+            if (!station.size()) {
+                printf("Yes\n");
+            } else {
+                printf("No\n");
+            }
         }
+
+        printf("\n");
     }
 
     return 0;
