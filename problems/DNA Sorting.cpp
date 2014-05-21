@@ -90,7 +90,7 @@ int main() {
             dataset[i] = line;
         }
 
-        sort(dataset, dataset + m, ValueCmp);
+        stable_sort(dataset, dataset + m, ValueCmp);
 
         for (int k = 0; k < m; k++) {
             cout << dataset[k] << endl;
