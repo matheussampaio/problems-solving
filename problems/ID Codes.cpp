@@ -48,7 +48,7 @@ string line;
 
 int main() {
 
-    freopen("input.txt", "r", stdin);
+    // freopen("input.txt", "r", stdin);
 
     while (getline(cin, line)) {
         if (line.compare("#") == 0)
