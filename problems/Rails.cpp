@@ -7,8 +7,8 @@ Problem:
 
 Link: http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=455
 
+Rails
 
-  Rails
 There is a famous railway station in PopPush City. Country there is incredibly hilly. The station was built in last century. Unfortunately, funds were extremely limited that time. It was possible to establish only a surface track. Moreover, it turned out that the station could be only a dead-end one (see picture) and due to lack of available space it could have only one track.
 
 

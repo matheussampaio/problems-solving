@@ -9,8 +9,6 @@ Problem:
 Link: http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2133
 
 Group Reverse
-Input: Standard Input
-Output: Standard Output
 
 Group reversing a string means reversing a string by groups. For example consider a string:
 
