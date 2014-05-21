@@ -40,40 +40,43 @@ Yes
 
 using namespace std;
 
-int count;
+int count, i;
 
 string line;
+stack< char > pilha;
 
 int main() {
 
-    freopen("input.txt", "r", stdin);
+    // freopen("input.txt", "r", stdin);
 
-    scanf("%d", &count);
+    scanf("%d\n", &count);
 
     while (count--) {
 
-        stack< char > pilha;
-        cin >> line;
+        while (pilha.size() > 0) {
+            pilha.pop();
+        }
 
-        for (int i = 0; i < line.size(); i++) {
+        getline(cin, line);
+
+        for (i = 0; i < line.size(); i++) {
 
             if (line[i] == '(' || line[i] == '[') {
                 pilha.push(line[i]);
             } else if (pilha.empty()) {
-                pilha.push(line[i]);
+                pilha.push('E');
                 break;
-            } else if (line[i] == ')') {
-                if (pilha.top() != '(')
-                    break;
+            } else if (line[i] == ')' && pilha.top() == '(') {
                 pilha.pop();
-            } else if (line[i] == ']') {
-                if (pilha.top() != '[')
-                    break;
+            } else if (line[i] == ']' && pilha.top() == '[') {
                 pilha.pop();
+            } else {
+                pilha.push('E');
+                break;
             }
         }
 
-        if (!pilha.size()) {
+        if (pilha.size() == 0) {
             printf("Yes\n");
         } else {
             printf("No\n");
