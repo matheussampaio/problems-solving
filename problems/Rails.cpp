@@ -48,46 +48,38 @@ Yes
 
 using namespace std;
 
-int count, i;
+int N, count, i;
+bool first = true;
 
 string line;
-stack< char > pilha;
+// stack< char > pilha;
 
 int main() {
 
-    // freopen("input.txt", "r", stdin);
+    freopen("input.txt", "r", stdin);
 
-    scanf("%d\n", &count);
+    while (true) {
 
-    while (count--) {
+        scanf("%d\n", &N);
 
-        while (pilha.size() > 0) {
-            pilha.pop();
-        }
+        if (!N)
+            break;
 
-        getline(cin, line);
-
-        for (i = 0; i < line.size(); i++) {
-
-            if (line[i] == '(' || line[i] == '[') {
-                pilha.push(line[i]);
-            } else if (pilha.empty()) {
-                pilha.push('E');
-                break;
-            } else if (line[i] == ')' && pilha.top() == '(') {
-                pilha.pop();
-            } else if (line[i] == ']' && pilha.top() == '[') {
-                pilha.pop();
-            } else {
-                pilha.push('E');
-                break;
-            }
-        }
-
-        if (pilha.size() == 0) {
-            printf("Yes\n");
+        if (first) {
+            first = false;
         } else {
-            printf("No\n");
+            printf("\n");
+        }
+
+        while (true) {
+            getline(cin, line);
+
+            if (!line.compare("0"))
+                break;
+
+            // TODO
+
+            printf("Yes\n");
         }
     }
 

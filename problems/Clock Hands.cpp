@@ -56,19 +56,19 @@ int main() {
     float hour, minute;
 
     while ( true ) {
-    	scanf("%f%*[:]%f", &hour, &minute);
-    	
+        scanf("%f%*[:]%f", &hour, &minute);
+
         if (hour == 0 && minute == 0) {
             break;
         }
-		
+
         float result = abs( ( (hour * 30) + (minute / 2) ) - (minute * 6) );
-		
+
         if (result >= 180)
             result = 360 - result;
-		
+
         printf("%.3f\n", result);
-		
+
     }
 
     return 0;
