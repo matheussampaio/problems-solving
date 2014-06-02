@@ -1,7 +1,4 @@
-#include <string>
 #include <cstdio>
-#include <iostream>
-#include <algorithm>
 
 /*
 Problem:
@@ -46,12 +43,33 @@ Sample Output
 
 using namespace std;
 
+int skyline[10001], l, t, r, i, f;
 
 int main() {
 
-    // freopen("input.txt", "r", stdin);
+    while (scanf("%d %d %d", &l, &t, &r) == 3) {
+        for (i = l; i < r; i++) {
+            if (skyline[i] < t) {
+                skyline[i] = t;
+            }
+        }
+    }
 
-	// TODO
+    for (i = 0, f = 1; i <= 10001; i++) {
+        if (skyline[i - 1] != skyline[i]) {
+            if (f == 1) {
+                printf("%d %d", i, skyline[i]);
+                f++;
+            } else {
+                printf(" %d %d", i, skyline[i]);
+            }
+
+        }
+
+    }
+
+    printf("\n");
+
 
     return 0;
 };
