@@ -46,17 +46,22 @@ int count, i;
 
 string line;
 
-int main() {
+int main()
+{
 
     // freopen("input.txt", "r", stdin);
 
-    while (getline(cin, line)) {
+    while (getline(cin, line))
+    {
         if (line.compare("#") == 0)
             break;
 
-        if (next_permutation(line.begin(), line.end())) {
+        if (next_permutation(line.begin(), line.end()))
+        {
             cout << line << endl;
-        } else {
+        }
+        else
+        {
             cout << "No Successor" << endl;
         }
 

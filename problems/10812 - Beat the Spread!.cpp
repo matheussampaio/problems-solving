@@ -25,13 +25,15 @@ impossible
 
 using namespace std;
 
-int main() {
+int main()
+{
 
     int n, i, s, d;
 
     scanf("%d", &n);
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
 
         scanf("%d", &s);
         scanf("%d", &d);
@@ -40,17 +42,20 @@ int main() {
 
         int scoreB = 0;
 
-        for (int scoreA = s; scoreA >= 0; scoreA--) {
+        for (int scoreA = s; scoreA >= 0; scoreA--)
+        {
             scoreB = s - scoreA;
 
-            if (scoreA - scoreB == d) {
+            if (scoreA - scoreB == d)
+            {
                 printf("%d %d\n", scoreA, scoreB);
                 hasResult = true;
                 break;
             }
         }
 
-        if (!hasResult) {
+        if (!hasResult)
+        {
             printf("impossible\n");
         }
 

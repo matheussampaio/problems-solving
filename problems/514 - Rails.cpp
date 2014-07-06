@@ -52,53 +52,67 @@ bool cont;
 
 stack< int > station;
 
-int main() {
+int main()
+{
 
     // freopen("input.txt", "r", stdin);
 
-    while (true) {
+    while (true)
+    {
 
         scanf("%d\n", &N);
 
-        if (!N) {
+        if (!N)
+        {
             break;
         }
 
-        while (true) {
+        while (true)
+        {
 
-            while (!station.empty()) {
+            while (!station.empty())
+            {
                 station.pop();
             }
 
-            for (k = i = 0; i < N; i++) {
+            for (k = i = 0; i < N; i++)
+            {
 
                 scanf("%d ", &coach);
 
-                if (!coach) {
+                if (!coach)
+                {
                     break;
                 }
 
-                while (k < N && k != coach) {
-                    if (station.size() > 0 && station.top() == coach) {
+                while (k < N && k != coach)
+                {
+                    if (station.size() > 0 && station.top() == coach)
+                    {
                         break;
                     }
 
                     station.push(++k);
                 }
 
-                if (station.top() == coach) {
+                if (station.top() == coach)
+                {
                     station.pop();
                 }
 
             }
 
-            if (!coach) {
+            if (!coach)
+            {
                 break;
             }
 
-            if (!station.size()) {
+            if (!station.size())
+            {
                 printf("Yes\n");
-            } else {
+            }
+            else
+            {
                 printf("No\n");
             }
         }

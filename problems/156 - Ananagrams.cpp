@@ -47,14 +47,16 @@ soon
 
 using namespace std;
 
-int main() {
+int main()
+{
 
     map<string, vector<string> > dic;
     string line;
 
     vector<string> result;
 
-    while (getline(cin, line)) {
+    while (getline(cin, line))
+    {
 
         if (line.compare("#") == 0)
             break;
@@ -63,9 +65,11 @@ int main() {
 
         string word, tmp_word;
 
-        while (iss >> word) {
+        while (iss >> word)
+        {
 
-            if (word.size() > 1) {
+            if (word.size() > 1)
+            {
                 tmp_word = word;
 
                 transform(tmp_word.begin(), tmp_word.end(), tmp_word.begin(), ::toupper);
@@ -73,7 +77,9 @@ int main() {
 
                 dic[tmp_word].push_back(word);
 
-            } else {
+            }
+            else
+            {
 
                 dic[word].push_back(word);
 
@@ -82,17 +88,22 @@ int main() {
 
     }
 
-    for (map<string, vector<string> >::iterator iter = dic.begin(); iter != dic.end(); ++iter) {
-        if (iter->first.size() == 1) {
+    for (map<string, vector<string> >::iterator iter = dic.begin(); iter != dic.end(); ++iter)
+    {
+        if (iter->first.size() == 1)
+        {
             result.push_back(iter->second[0]);
-        } else if (iter->second.size() == 1) {
+        }
+        else if (iter->second.size() == 1)
+        {
             result.push_back(iter->second[0]);
         }
     }
 
     sort(result.begin(), result.end());
 
-    for (vector<string>::iterator iter = result.begin(); iter != result.end(); ++iter) {
+    for (vector<string>::iterator iter = result.begin(); iter != result.end(); ++iter)
+    {
         cout << *iter << endl;
     }
 

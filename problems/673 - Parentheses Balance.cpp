@@ -45,40 +45,56 @@ int count, i;
 string line;
 stack< char > pilha;
 
-int main() {
+int main()
+{
 
     // freopen("input.txt", "r", stdin);
 
     scanf("%d\n", &count);
 
-    while (count--) {
+    while (count--)
+    {
 
-        while (pilha.size() > 0) {
+        while (pilha.size() > 0)
+        {
             pilha.pop();
         }
 
         getline(cin, line);
 
-        for (i = 0; i < line.size(); i++) {
+        for (i = 0; i < line.size(); i++)
+        {
 
-            if (line[i] == '(' || line[i] == '[') {
+            if (line[i] == '(' || line[i] == '[')
+            {
                 pilha.push(line[i]);
-            } else if (pilha.empty()) {
+            }
+            else if (pilha.empty())
+            {
                 pilha.push('E');
                 break;
-            } else if (line[i] == ')' && pilha.top() == '(') {
+            }
+            else if (line[i] == ')' && pilha.top() == '(')
+            {
                 pilha.pop();
-            } else if (line[i] == ']' && pilha.top() == '[') {
+            }
+            else if (line[i] == ']' && pilha.top() == '[')
+            {
                 pilha.pop();
-            } else {
+            }
+            else
+            {
                 pilha.push('E');
                 break;
             }
         }
 
-        if (pilha.size() == 0) {
+        if (pilha.size() == 0)
+        {
             printf("Yes\n");
-        } else {
+        }
+        else
+        {
             printf("No\n");
         }
     }

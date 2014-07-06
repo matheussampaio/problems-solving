@@ -44,28 +44,36 @@ int num, i;
 map<int, int> ages;
 map<int, int>::iterator iter;
 
-int main() {
+int main()
+{
 
     freopen("input.txt", "r", stdin);
 
     int N;
 
-    while (true) {
+    while (true)
+    {
         scanf("%d", &N);
 
         if (N == 0)
             break;
 
-        for (i = 0; i < N; i++) {
+        for (i = 0; i < N; i++)
+        {
             scanf("%d", &num);
             ages[num]++;
         }
 
-        for (iter = ages.begin(); iter != ages.end(); ++iter) {
-            for (i = 0; i < iter->second; i++) {
-                if (distance(iter, ages.end()) == 1 && i + 1 == iter->second) {
+        for (iter = ages.begin(); iter != ages.end(); ++iter)
+        {
+            for (i = 0; i < iter->second; i++)
+            {
+                if (distance(iter, ages.end()) == 1 && i + 1 == iter->second)
+                {
                     printf("%d", iter->first);
-                } else {
+                }
+                else
+                {
                     printf("%d ", iter->first);
                 }
             }
