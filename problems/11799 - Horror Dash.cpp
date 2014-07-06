@@ -22,7 +22,8 @@ Sample Input             Sample Output
 
 using namespace std;
 
-int main() {
+int main()
+{
 
     int cases;
 
@@ -30,7 +31,8 @@ int main() {
 
     int results[cases];
 
-    for (int i = 0; i < cases; ++i) {
+    for (int i = 0; i < cases; ++i)
+    {
 
         int students;
 
@@ -42,10 +44,12 @@ int main() {
 
         int temp_speed;
 
-        for (int k = 1; k < students; ++k) {
+        for (int k = 1; k < students; ++k)
+        {
             cin >> temp_speed;
 
-            if (temp_speed > min_speed) {
+            if (temp_speed > min_speed)
+            {
                 min_speed = temp_speed;
             }
         }
@@ -53,7 +57,8 @@ int main() {
         results[i] = min_speed;
     }
 
-    for (int k = 0; k < cases; ++k) {
+    for (int k = 0; k < cases; ++k)
+    {
         cout << "Case " << k + 1 << ": " << results[k] << endl;
     }
 

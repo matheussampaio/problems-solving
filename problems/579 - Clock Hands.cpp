@@ -51,14 +51,17 @@ Sample Output
 
 using namespace std;
 
-int main() {
+int main()
+{
 
     float hour, minute;
 
-    while ( true ) {
+    while ( true )
+    {
         scanf("%f%*[:]%f", &hour, &minute);
 
-        if (hour == 0 && minute == 0) {
+        if (hour == 0 && minute == 0)
+        {
             break;
         }
 

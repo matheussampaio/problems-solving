@@ -86,13 +86,20 @@ int k, numbers[15];
 int i1, i2, i3, i4, i5, i6;
 bool first = true;
 
-void print_combinations() {
-    for (i1 = 0; i1 < k - 5; i1++) {
-        for (i2 = i1 + 1; i2 < k - 4; i2++) {
-            for (i3 = i2 + 1; i3 < k - 3; i3++) {
-                for (i4 = i3 + 1; i4 < k - 2; i4++) {
-                    for (i5 = i4 + 1; i5 < k - 1; i5++) {
-                        for (i6 = i5 + 1; i6 < k; i6++) {
+void print_combinations()
+{
+    for (i1 = 0; i1 < k - 5; i1++)
+    {
+        for (i2 = i1 + 1; i2 < k - 4; i2++)
+        {
+            for (i3 = i2 + 1; i3 < k - 3; i3++)
+            {
+                for (i4 = i3 + 1; i4 < k - 2; i4++)
+                {
+                    for (i5 = i4 + 1; i5 < k - 1; i5++)
+                    {
+                        for (i6 = i5 + 1; i6 < k; i6++)
+                        {
                             printf("%d %d %d %d %d %d\n", numbers[i1], numbers[i2], numbers[i3], numbers[i4], numbers[i5], numbers[i6]);
                         }
                     }
@@ -102,11 +109,13 @@ void print_combinations() {
     }
 }
 
-int main() {
+int main()
+{
 
     // freopen("input.txt", "r", stdin);
 
-    while (true) {
+    while (true)
+    {
 
         scanf("%d", &k);
 
@@ -118,7 +127,8 @@ int main() {
         else
             printf("\n");
 
-        for (i1 = 0; i1 < k; i1++) {
+        for (i1 = 0; i1 < k; i1++)
+        {
             scanf("%d", &numbers[i1]);
         }
 

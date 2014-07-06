@@ -14,7 +14,8 @@ using namespace std;
 int M, C, K, price[25][25]; // price[garment_id (<= 20)][model (<= 20)]
 int memo[210][25]; // dp table memo[money_left (<= 200)][garment_id (<= 20)]
 
-int shop(int money_left, int garment_id) {
+int shop(int money_left, int garment_id)
+{
     if (money_left < 0)
         return -1000000000; // fail, return a large negative number (1B)
 
@@ -33,21 +34,24 @@ int shop(int money_left, int garment_id) {
 }
 
 
-int main() { // easy to code if you are already familiar with it
+int main()   // easy to code if you are already familiar with it
+{
     int i, j, TC, score;
 
     scanf("%d", &TC);
 
-    while (TC--) {
+    while (TC--)
+    {
         scanf("%d %d", &M, &C);
 
-        for (i = 0; i < C; i++) {
+        for (i = 0; i < C; i++)
+        {
             scanf("%d", &K);
 
             price[i][0] = K; // to simplify coding, we store K in price[i][0]
 
             for (j = 1; j <= K; j++)
-               scanf("%d", &price[i][j]);
+                scanf("%d", &price[i][j]);
         }
 
         memset(memo, -1, sizeof memo); // initialize DP memo table
