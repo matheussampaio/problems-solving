@@ -18,8 +18,7 @@ int memo[110][25010]; // dp table memo[money_left (<= 200)][garment_id (<= 20)]
 
 int knapsack() {
 
-    int target = SUM / 2;
-
+    int target = soma / 2;
 
     for (int i = 1; i <= M; i++) {
         for (int j = 1; j <= target; j++) {
@@ -31,7 +30,7 @@ int knapsack() {
         }
     }
 
-    return  SUM - memo[M][target] * 2;
+    return  soma - memo[M][target] * 2;
 }
 
 int main() {
@@ -44,12 +43,12 @@ int main() {
     while (TC--) {
         scanf("%d", &M);
 
-        SUM = 0;
+        soma = 0;
 
         for (i = 0; i < M; i++) {
             scanf("%d", &K);
 
-            SUM += K;
+            soma += K;
 
             coins[i] = K; // to simplify coding, we store K in price[i][0]
         }
