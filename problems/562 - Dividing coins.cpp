@@ -8,40 +8,55 @@ Link: http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&
 
 #include <iostream>
 #include <algorithm>
-#include <string.h>
+#include <cstring>
 #include <cstdio>
 
-int M, K, price[110]; // price[ M (<= 200)]
-int memo[110][25]; // dp table memo[money_left (<= 200)][garment_id (<= 20)]
+using namespace std;
 
-int divide(int coins_left, int diff)
-{
+int M, K, SUM, coins[110]; // coins[ M (<= 200)]
+int memo[110][25010]; // dp table memo[money_left (<= 200)][garment_id (<= 20)]
 
-    return 0;
+int knapsack() {
+
+    int target = SUM / 2;
+
+
+    for (int i = 1; i <= M; i++) {
+        for (int j = 1; j <= target; j++) {
+            if (coins[i - 1] > j) {
+                memo[i][j] = memo[i - 1][j];
+            } else {
+                memo[i][j] = max(memo[i - 1][j], memo[i - 1][j - coins[i - 1]] + coins[i - 1]);
+            }
+        }
+    }
+
+    return  SUM - memo[M][target] * 2;
 }
 
-int main()
-{
+int main() {
     int i, j, TC, score;
 
-    freopen("input.txt", "r", stdin);
+    // freopen("input.txt", "r", stdin);
 
     scanf("%d", &TC);
 
-    while (TC--)
-    {
+    while (TC--) {
         scanf("%d", &M);
 
-        for (i = 0; i < M; i++)
-        {
+        SUM = 0;
+
+        for (i = 0; i < M; i++) {
             scanf("%d", &K);
 
-            price[i] = K; // to simplify coding, we store K in price[i][0]
+            SUM += K;
+
+            coins[i] = K; // to simplify coding, we store K in price[i][0]
         }
 
-        memset(memo, -1, sizeof memo); // initialize DP memo table
+        memset(memo, 0, sizeof memo); // initialize DP memo table
 
-        printf("%d\n", divide(M, 0)); // start the top-down DP
+        printf("%d\n", knapsack()); // start the top-down DP
 
     }
 } // return 0;
