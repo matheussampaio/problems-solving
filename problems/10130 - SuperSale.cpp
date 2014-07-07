@@ -34,7 +34,6 @@ int supersale() {
                 memo[i][j] = memo[i - 1][j];
             } else {
                 memo[i][j] = max(memo[i - 1][j], price[i - 1] + memo[i - 1][j - weights[i - 1]] );
-                // memo[i][j] = max(memo[i - 1][j], memo[i - 1][j - coins[i - 1]] + coins[i - 1]);
             }
         }
     }
@@ -51,7 +50,7 @@ int supersale() {
 
 int main() {
 
-    freopen("input.txt", "r", stdin);
+    // freopen("input.txt", "r", stdin);
 
     scanf("%d", &TC);
 
