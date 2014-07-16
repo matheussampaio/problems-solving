@@ -1,3 +1,12 @@
+/*
+
+code: PALAVRMG
+
+link: http://br.spoj.com/problems/PALAVRMG/
+
+*/
+
+
 #include <iostream>
 #include <cstdio>
 #include <string>
