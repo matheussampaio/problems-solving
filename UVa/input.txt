@@ -1,11 +1,15 @@
-r/P,o/G,y/S,g/A,b/N
-r/G,o/P,y/S,g/A,b/N
-r/P,y/S,o/G,g/N,b/A
-r/P,o/S,y/A,g/G,b/N
-e
-r/G,o/P,y/S,g/A,b/N
-r/P,y/S,o/G,g/N,b/A
-r/P,o/S,y/A,g/G,b/N
-r/P,o/G,y/S,g/A,b/N
-ecclesiastical
-#
+3
+1 2 0
+2 2 0
+3 1 2 0
+0
+2 1 2
+8
+1 2 1 0
+2 3 5 6 2 0
+3 7 8 0
+7 6 0
+8 4 7 8 0
+0
+3 1 8 8
+0
