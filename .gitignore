@@ -1,3 +1,4 @@
 .vagrant
 
-a.out
+*.out
+*.in
