@@ -29,26 +29,26 @@ int n, v, a, dfsLow[110], dfsNumberCounter = 0, dfsNum[110], dfsParent[110], dfs
 string line;
 
 void articulationPointAndBridge(int u) {
-	dfsLow[u] = dfsNum[u] = dfsNumberCounter++;
-	
-	Rep(v, n) {
-		if (adjMatrix[u][v] && dfsNum[v] == -1) {
-			dfsParent[v] = u;
+    dfsLow[u] = dfsNum[u] = dfsNumberCounter++;
 
-			if (u == dfsRoot)
-				rootChildren++;
-	
-			articulationPointAndBridge(v);
-			
-			if (dfsLow[v] >= dfsNum[u]) {
-				articulationVertex[u] = 1;
-			}
+    Rep(v, n) {
+        if (adjMatrix[u][v] && dfsNum[v] == -1) {
+            dfsParent[v] = u;
 
-			dfsLow[u] = min(dfsLow[u], dfsLow[v]);
-		} else if (adjMatrix[u][v] && v != dfsParent[u]) {
-			dfsLow[u] = min(dfsLow[u], dfsNum[v]);
-		}
-	}
+            if (u == dfsRoot)
+                rootChildren++;
+
+            articulationPointAndBridge(v);
+
+            if (dfsLow[v] >= dfsNum[u]) {
+                articulationVertex[u] = 1;
+            }
+
+            dfsLow[u] = min(dfsLow[u], dfsLow[v]);
+        } else if (adjMatrix[u][v] && v != dfsParent[u]) {
+            dfsLow[u] = min(dfsLow[u], dfsNum[v]);
+        }
+    }
 }
 
 int main() {
@@ -58,9 +58,9 @@ int main() {
         clr(adjMatrix, 0);
         clr(dfsNum, -1);
         clr(dfsLow, 0);
-		clr(articulationVertex, 0);
-		clr(dfsParent, 0);
-		
+        clr(articulationVertex, 0);
+        clr(dfsParent, 0);
+
         while (scanf("%d", &v) && v) {
 
             getline(cin, line);
@@ -72,23 +72,23 @@ int main() {
                 adjMatrix[a][v] = 1;
             }
         }
-		
-		Rep(i, n) {
-			if (dfsNum[i] == -1) {
-				dfsRoot = i;
-				rootChildren = 0;
-				articulationPointAndBridge(dfsRoot);
-				articulationVertex[dfsRoot] = (rootChildren > 1);
-			}
-		}
 
-		int count = 0;
+        Rep(i, n) {
+            if (dfsNum[i] == -1) {
+                dfsRoot = i;
+                rootChildren = 0;
+                articulationPointAndBridge(dfsRoot);
+                articulationVertex[dfsRoot] = (rootChildren > 1);
+            }
+        }
 
-		Rep(i, n) {
-			count += articulationVertex[i];
-		}
+        int count = 0;
 
-		cout << count << endl;
+        Rep(i, n) {
+            count += articulationVertex[i];
+        }
+
+        cout << count << endl;
     }
 
 }
