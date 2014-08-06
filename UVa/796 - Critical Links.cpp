@@ -33,7 +33,7 @@ string line;
 void articulationPointAndBridge(int u) {
     dfsLow[u] = dfsNum[u] = dfsNumberCounter++;
 
-    Rep(v, n) {
+    rep(v, n) {
         if (adjMatrix[u][v] && dfsNum[v] == -1) {
             dfsParent[v] = u;
 
@@ -46,9 +46,9 @@ void articulationPointAndBridge(int u) {
                 articulationVertex[u] = 1;
             }
 
-            if (dfsLow[v] > dfsNum[u]) { // for bridge
-                // printf(" Edge (%d, %d) is a bridge\n", u, v);
+            if (dfsLow[v] > dfsNum[u]) {
                 bridgeMatrix[u][v] = 1;
+                bridgeMatrix[v][u] = 1;
                 bridgeCount++;
             }
 
@@ -62,7 +62,7 @@ void articulationPointAndBridge(int u) {
 
 int main() {
 
-    freopen("input.txt", "r", stdin);
+    // freopen("input.txt", "r", stdin);
 
     while (scanf("%d", &n) != EOF) {
 
@@ -97,7 +97,7 @@ int main() {
         printf("%d critical links\n", bridgeCount);
 
         rep(i, n) {
-            rep(j, n) {
+            for (int j = i + 1; j < n; j++) {
                 if (bridgeMatrix[i][j]) {
                     printf("%d - %d\n", i, j);
                 }
