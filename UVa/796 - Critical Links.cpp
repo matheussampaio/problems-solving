@@ -22,6 +22,7 @@ typedef long long ll;
 // To simplify repetitions/loops, Note: define your loop style and stick with it!
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 #define Rep(i, n) for (int i = 1; i <= (n); ++i)
+#define REP(i, j, n) for (int i = (j); i<= (n); ++i)
 #define clr(x, a) memset(x, (a), sizeof x)
 
 using namespace std;
@@ -62,7 +63,7 @@ void articulationPointAndBridge(int u) {
 
 int main() {
 
-    // freopen("input.txt", "r", stdin);
+    freopen("input.txt", "r", stdin);
 
     while (scanf("%d", &n) != EOF) {
 
@@ -97,7 +98,7 @@ int main() {
         printf("%d critical links\n", bridgeCount);
 
         rep(i, n) {
-            for (int j = i + 1; j < n; j++) {
+            REP(j, i + 1, n) {
                 if (bridgeMatrix[i][j]) {
                     printf("%d - %d\n", i, j);
                 }

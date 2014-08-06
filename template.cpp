@@ -22,6 +22,7 @@ typedef long long ll;
 // To simplify repetitions/loops, Note: define your loop style and stick with it!
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 #define Rep(i, n) for (int i = 1; i <= (n); ++i)
+#define REP(i, j, n) for (int i = (j); i<= (n); ++i)
 #define clr(x, a) memset(x, (a), sizeof x)
 
 using namespace std;
