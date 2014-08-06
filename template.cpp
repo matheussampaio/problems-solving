@@ -11,6 +11,7 @@
 #include <map>
 #include <ctime>
 #include <sstream>
+#include <iterator>
 
 using namespace std;
 
@@ -26,12 +27,6 @@ typedef long long ll;
 #define clr(x, a) memset(x, (a), sizeof x)
 
 using namespace std;
-
-/*
-
-Link:
-
-*/
 
 int main() {
 
