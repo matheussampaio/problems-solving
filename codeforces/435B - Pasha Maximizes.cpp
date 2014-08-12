@@ -38,26 +38,32 @@ void swap(int a, int b) {
 
 int main() {
 
-    freopen("input.txt", "r", stdin);
+    // freopen("input.txt", "r", stdin);
 
-    int k;
+    int k, x = 0, y, z, w, i;
 
     cin >> line;
     cin >> k;
 
-    int a, b, i;
+    while (k > 0 && x < line.length()) {
 
-    while (k > 0 && i < line.length() - 1) {
-        a = line[i] - '0';
-        b = line[i + 1] - '0';
-
-        if (a < b) {
-            swap(i, i + 1);
-            i = 0;
-            k--;
-        } else {
-            i++;
+        y = -1;
+        REP(i, x, x + k) {
+            z = line[i] - '0';
+            if (z > y) {
+                y = z;
+                w = i;
+            }
         }
+
+        k -= w - x;
+
+        while (w > x) {
+            swap (w - 1, w);
+            w--;
+        }
+
+        x++;
     }
 
     cout << line << endl;
