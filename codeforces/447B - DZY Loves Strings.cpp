@@ -28,10 +28,45 @@ typedef long long ll;
 
 using namespace std;
 
+char alpha[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+map<char, int> letters;
+
+string line;
+
+int n, maxn, num;
+
 int main() {
 
     // freopen("input.txt", "r", stdin);
 
+    cin >> line;
+
+    cin >> n;
+
+    maxn = -1;
+
+    rep(i, 26) {
+
+        scanf("%d", &num);
+
+        letters[alpha[i]] = num;
+
+        if (num > maxn)
+            maxn = num;
+    }
+
+    int result = 0;
+
+    rep(i, line.length()) {
+        result += letters[line[i]] * (i + 1);
+    }
+
+    REP(i, line.length() + 1, line.length() + n) {
+        result += maxn * i;
+    }
+
+    printf("%d\n", result);
 
     return 0;
 }
