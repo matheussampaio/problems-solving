@@ -45,24 +45,19 @@ Sample output
 int count, changesCount, indexResult, indexA, indexB, indexC, minChanges;
 string line, dataset[110][5];
 
-int recycling()
-{
+int recycling() {
     indexResult = 0, minChanges = 0xffffff, changesCount;
 
-    for (indexA = 0; indexA < count; indexA++)
-    {
+    for (indexA = 0; indexA < count; indexA++) {
         changesCount = 0;
-        for (indexB = 0; indexB < count; indexB++)
-        {
-            for (indexC = 0; indexC < 5; indexC++)
-            {
+        for (indexB = 0; indexB < count; indexB++) {
+            for (indexC = 0; indexC < 5; indexC++) {
                 if (dataset[indexA][indexC] != dataset[indexB][indexC])
                     changesCount++;
             }
         }
 
-        if (changesCount < minChanges)
-        {
+        if (changesCount < minChanges) {
             minChanges = changesCount;
             indexResult = indexA;
         }
@@ -72,8 +67,7 @@ int recycling()
 }
 
 
-int main()
-{
+int main() {
 
     // freopen("input.txt", "r", stdin);
 
@@ -82,20 +76,15 @@ int main()
     int k, i;
     char c;
 
-    while (getline(cin, line))
-    {
+    while (getline(cin, line)) {
         if (line.compare("#") == 0)
             break;
 
-        if (line.at(0) == 'e')
-        {
+        if (line.at(0) == 'e') {
             printf("%d\n", recycling());
             count = 0;
-        }
-        else
-        {
-            for (k = 0; k < 5; k++)
-            {
+        } else {
+            for (k = 0; k < 5; k++) {
                 c = line.at(k * 4);
                 i = 0;
 

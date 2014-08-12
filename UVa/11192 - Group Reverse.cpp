@@ -46,29 +46,24 @@ int group, i, k;
 char temp;
 string line;
 
-void swap(int a, int b)
-{
+void swap(int a, int b) {
     temp = line[a];
     line[a] = line[b];
     line[b] = temp;
 }
 
-void reverse(int begin, int end)
-{
+void reverse(int begin, int end) {
 
-    for (int k = 0; k < group / 2; k++)
-    {
+    for (int k = 0; k < group / 2; k++) {
         swap(begin + k, end - k);
     }
 }
 
-int main()
-{
+int main() {
 
     // freopen("input.txt", "r", stdin);
 
-    while (true)
-    {
+    while (true) {
         scanf("%d", &group);
 
         if (!group)
@@ -78,8 +73,7 @@ int main()
 
         group = line.size() / group;
 
-        for (i = 0; i < line.size(); i += group)
-        {
+        for (i = 0; i < line.size(); i += group) {
             reverse(i, i + group - 1);
         }
 

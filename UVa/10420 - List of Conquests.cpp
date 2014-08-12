@@ -43,8 +43,7 @@ Spain 2
 
 using namespace std;
 
-int main()
-{
+int main() {
 
     int n, i;
 
@@ -55,28 +54,23 @@ int main()
     map<string, int> beauties;
     map<string, int>::iterator iter;
 
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 0; i < n; ++i) {
         getline(cin, line);
 
         istringstream iss(line);
 
         iss >> country;
 
-        if (beauties.find(country) == beauties.end())
-        {
+        if (beauties.find(country) == beauties.end()) {
             beauties[country] = 1;
-        }
-        else
-        {
+        } else {
             beauties[country] = beauties[country] + 1;
         }
     }
 
 
 
-    for (iter = beauties.begin(); iter != beauties.end(); iter++)
-    {
+    for (iter = beauties.begin(); iter != beauties.end(); iter++) {
         cout << iter->first << " " << iter->second << endl;
     }
 

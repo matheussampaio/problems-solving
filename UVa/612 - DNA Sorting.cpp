@@ -54,16 +54,14 @@ using namespace std;
 int M, n, m, i;
 string line, dataset[110];
 
-int sortedness(string line)
-{
+int sortedness(string line) {
     if (!line.size())
         return 0;
 
     char c = line[0];
     int count = 0;
 
-    for (int i = 1; i < line.size(); ++i)
-    {
+    for (int i = 1; i < line.size(); ++i) {
         if (c > line[i])
             count++;
     }
@@ -71,25 +69,21 @@ int sortedness(string line)
     return count + sortedness(line.substr(1, line.size()));
 }
 
-bool ValueCmp(string const &a, string const &b)
-{
+bool ValueCmp(string const &a, string const &b) {
     return sortedness(a) < sortedness(b);
 }
 
-int main()
-{
+int main() {
 
     // freopen("input.txt", "r", stdin);
 
     scanf("%d", &M);
 
-    while (M--)
-    {
+    while (M--) {
 
         scanf("%d%*[ ]%d\n", &n, &m);
 
-        for (i = 0; i < m; i++)
-        {
+        for (i = 0; i < m; i++) {
             getline(cin, line);
 
             dataset[i] = line;
@@ -97,8 +91,7 @@ int main()
 
         stable_sort(dataset, dataset + m, ValueCmp);
 
-        for (int k = 0; k < m; k++)
-        {
+        for (int k = 0; k < m; k++) {
             cout << dataset[k] << endl;
         }
 
