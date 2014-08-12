@@ -48,12 +48,16 @@ int main() {
     while (k > 0 && x < line.length()) {
 
         y = -1;
-        REP(i, x, x + k) {
+        i = x;
+
+        while (i <= (x + k) && i < line.length() ) {
             z = line[i] - '0';
             if (z > y) {
                 y = z;
                 w = i;
             }
+
+            i++;
         }
 
         k -= w - x;
