@@ -28,15 +28,8 @@ typedef long long ll;
 
 using namespace std;
 
-
-
-// double dist(int xa, int ya, int xb, int yb) {
-//     return sqrt((xb - xa) * (xb - xa) + (yb - ya) * (yb - ya));
-// }
-
 int main() {
 
-    // freopen("input.txt", "r", stdin);
     int x1, y1, x2, y2, x3, y3, x4, y4;
 
     cin >> x1 >> y1 >> x2 >> y2;
@@ -48,7 +41,7 @@ int main() {
             printf("%d %d %d %d\n", x1, y2, x2, y1);
         }
     } else if (y1 == y2) {
-        int dist = x1 - x2;
+        int dist = abs(x1 - x2);
 
         printf("%d %d %d %d\n", x1, y1 + dist, x2, y2 + dist);
     } else if (x1 == x2) {
