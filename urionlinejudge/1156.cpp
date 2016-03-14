@@ -28,12 +28,38 @@ typedef long long ll;
 
 using namespace std;
 
-// urionlinejudge::description
+/*
+ * Title:
+ * Sequência S II
+ *
+ * Timelimit: 1
+ *
+ * Description:
+ * Escreva um algoritmo para calcular e escrever o valor de S, sendo S dado
+ * pela fórmula:
+	S = 1 + 3/2 + 5/4 + 7/8 + ... + 39/?
+ *
+ * Input:
+ * Não há nenhuma entrada neste problema.
+ *
+ * Output:
+ * A saída contém um valor correspondente ao valor de S.
+ * O valor deve ser impresso com dois dígitos após o ponto decimal.
+ *
+ */
+
+float sequenciaSII() {
+    float result = 0.0;
+
+    for (int i = 1, j = 1; i < 41; i+=2, j *= 2) {
+        result += (i * 1.0) / j;
+    }
+
+    return result;
+}
 
 int main() {
-
-    // freopen("input.txt", "r", stdin);
-
+    printf("%.2f\n", sequenciaSII());
 
     return 0;
 }

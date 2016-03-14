@@ -28,12 +28,37 @@ typedef long long ll;
 
 using namespace std;
 
-// urionlinejudge::description
+/*
+ * Title:
+ * Divisores I
+ *
+ * Timelimit: 1
+ *
+ * Description:
+ * Ler um número inteiro N e calcular todos os seus divisores.
+ *
+ * Input:
+ * O arquivo de entrada contém um valor inteiro.
+ *
+ * Output:
+ * Escreva todos os divisores de N, um valor por linha.
+ *
+ */
+
+void every_divisor(int n) {
+    Rep(i, n) {
+        if (n % i == 0) {
+            cout << i << endl;
+        }
+    }
+}
 
 int main() {
+    int X;
 
-    // freopen("input.txt", "r", stdin);
+    cin >> X;
 
+    every_divisor(X);
 
     return 0;
 }
