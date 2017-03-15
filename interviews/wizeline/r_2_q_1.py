@@ -2,7 +2,6 @@
 # ex: ["Matheus", "Lucas", "Thiago", "Matheus"] => "Matheus"
 # ex: ["Thiago", "Lucas", "Thiago", "Matheus", "Matheus"] => "Thiago"
 
-
 def solution(votes):
     candidatos = {}
 

@@ -5,6 +5,29 @@
 # '(bar)' => 'rab'
 # '(bas)er(ert)' => sabertre
 
+def wrong_solution(string):
+    stack = []
+
+    word = ""
+
+    for c in string:
+        if c == "(":
+            stack.append(word)
+            word = ""
+
+        elif c == ")":
+            tmp = stack.pop()
+            tmp = tmp.reverse()
+
+            stack.append(stack.pop() + tmp)
+
+        else:
+            word += c
+
+    stack.append(word)
+
+    return stack.join("")
+
 def solution(string):
     stack = []
 
